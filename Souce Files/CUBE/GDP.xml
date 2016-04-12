@@ -1,0 +1,56 @@
+<Schema name="GDP-ANALYSIS">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="CALENDAR">
+    <Hierarchy visible="true" hasAll="true" primaryKey="CALENDAR_YEAR_SEQ">
+      <Table name="calendar_year_dim">
+      </Table>
+      <Level name="YEAR" visible="true" column="YEAR" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Indices">
+    <Hierarchy name="Indices" visible="true" hasAll="true" primaryKey="INDICATOR_SEQ">
+      <Table name="indicator_dim">
+      </Table>
+      <Level name="Indices Code" visible="true" column="INDICATOR_CODE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Indices Name" visible="true" column="INDICATOR_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Indicator Description" visible="true" column="INDICATOR_DESC" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="XChange Rates">
+    <Hierarchy visible="true" hasAll="true" primaryKey="EXCHANGE_SEQ">
+      <Table name="exchange_rates_dim">
+      </Table>
+      <Level name="Curency Name" visible="true" column="CURRENCY_NAME" nameColumn="CURRENCY_CODE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Xchange Rate" visible="true" column="EXCHANGE_RATE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" name="Country">
+    <Hierarchy visible="true" hasAll="true" primaryKey="COUNTRY_SEQ">
+      <Table name="country_dim" alias="">
+      </Table>
+      <Level name="Country Code" visible="true" column="COUNTRY_CODE" type="String" uniqueMembers="false" levelType="Regular">
+      </Level>
+      <Level name="Country Name" visible="true" column="COUNTRY_NAME" type="String" uniqueMembers="false" levelType="Regular">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="GDP" visible="true" cache="true" enabled="true">
+    <Table name="gdp_fact">
+    </Table>
+    <DimensionUsage source="CALENDAR" name="CALENDAR" visible="true" foreignKey="CALENDAR_YEAR_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Indices" name="Indicators" visible="true" foreignKey="INDICATOR_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="XChange Rates" name="xchange Rate" visible="true" foreignKey="EXCHANGE_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Country" name="Country" visible="true" foreignKey="COUNTRY_ID">
+    </DimensionUsage>
+    <Measure name="mx value" column="GDP_VALUE" aggregator="max" visible="true">
+    </Measure>
+  </Cube>
+</Schema>

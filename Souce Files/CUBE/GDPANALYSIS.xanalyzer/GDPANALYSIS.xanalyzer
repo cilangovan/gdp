@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reportRecord xmlns="http://www.pentaho.com">
+    <commonStorageAttributes createdBy="admin" updatedBy="admin" created="2014-05-27T23:42:25" update="2014-05-28T18:08:49">
+        <path name="GDPANALYSIS" folder="/home/GDP/GDPANALYSIS.xanalyzer"/>
+    </commonStorageAttributes>
+    <report catalog="GDP-ANALYSIS" cube="GDP" reportTypeEnum="PIVOT" showRowGrandTotal="false" showColumnGrandTotal="false" useNonVisualTotals="false" showEmptyCells="false" emptyCellDisplay="-" showDrillLinks="false" version="9" autoRefresh="true" freezeColumns="true" freezeRows="true">
+        <measures>
+            <measure formula="[Measures].[mx value]" showSum="true" showAggregate="false" showAverage="false" showCount="false" showMax="false" showMin="false" measureTypeEnum="VALUE" sortOrderEnum="NONE" id="[MEASURE:0]"/>
+        </measures>
+        <columnAttributes>
+            <attribute formula="[CALENDAR].[YEAR]" showSubtotal="false" sortOrderEnum="ASC"/>
+        </columnAttributes>
+        <rowAttributes>
+            <attribute formula="[xchange Rate].[Curency Name]" showSubtotal="false" sortOrderEnum="ASC"/>
+        </rowAttributes>
+        <filters/>
+        <chartOptions chartType="CUSTOM" customChartType="ccc_bar" legendPosition="RIGHT" showLegend="true" autoRange="true" displayUnits="UNITS_0" autoRangeSecondary="true" displayUnitsSecondary="UNITS_0" lineWidth="2" lineShape="CIRCLE" maxValues="100" backgroundColor="#ffffff" labelColor="#000000" labelSize="12" backgroundFill="NONE" maxChartsPerRow="3" backgroundColorEnd="#ffffff" labelStyle="PLAIN" legendBackgroundColor="#ffffff" legendSize="12" legendColor="#000000" legendStyle="PLAIN" labelFontFamily="Default" legendFontFamily="Default"/>
+        <selectionFilters/>
+        <selectionItems/>
+        <pageSetup excelPageSize="LETTER" pdfPageSize="LETTER" excelOrientation="LANDSCAPE" pdfOrientation="LANDSCAPE" excelScalingType="PERCENT" excelScalingPercent="100" excelScalingPageWide="1" excelScalingPageTall="1"/>
+        <drillColumns/>
+    </report>
+    <uiAttributes showFieldList="true" showFieldLayout="true" showFilterPanel="false">
+        <rowFieldWidths actualWidths="80"/>
+        <columnDataFieldWidths actualWidths="120,120,120,120,120,120,120,120,120,120,120,120,120">
+            <labelWidth index="0">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="1">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="2">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="3">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="4">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="5">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="6">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="7">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="8">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="9">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="10">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="11">
+                <width>0</width>
+            </labelWidth>
+            <labelWidth index="12">
+                <width>0</width>
+            </labelWidth>
+        </columnDataFieldWidths>
+        <pluginData>[]</pluginData>
+    </uiAttributes>
+</reportRecord>
